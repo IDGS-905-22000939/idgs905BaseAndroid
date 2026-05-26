@@ -31,24 +31,34 @@ class distancia : AppCompatActivity() {
             insets
         }
 
-        edtX1 = findViewById(R.id.edtX1)
-        edtY1 = findViewById(R.id.edtY1)
-        edtX2 = findViewById(R.id.edtX2)
-        edtY2 = findViewById(R.id.edtY2)
-        btnCalcular = findViewById(R.id.btnCalcular)
-        txtResultado = findViewById(R.id.txtResultado)
+        val edtX1 = findViewById<EditText>(R.id.edtX1)
+        val edtY1 = findViewById<EditText>(R.id.edtY1)
+        val edtX2 = findViewById<EditText>(R.id.edtX2)
+        val edtY2 = findViewById<EditText>(R.id.edtY2)
+
+        val btnCalcular = findViewById<Button>(R.id.btnCalcular)
+
+        val txtResultado = findViewById<TextView>(R.id.txtResultado)
 
         btnCalcular.setOnClickListener {
+
             val x1 = edtX1.text.toString().toDouble()
             val y1 = edtY1.text.toString().toDouble()
             val x2 = edtX2.text.toString().toDouble()
             val y2 = edtY2.text.toString().toDouble()
 
-            txtResultado.setText("Resultado: "+calcularDistancia(x1, y1, x2, y2))
+            val resultado = calcularDistancia(x1, y1, x2, y2)
+
+            txtResultado.text = "Resultado: " + resultado
         }
     }
-    fun calcularDistancia(x1: Double, y1: Double, x2: Double, y2:Double): String {
-        val d= sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2))
-        return "%.2f".format(d)
+    fun calcularDistancia(
+        x1: Double,
+        y1: Double,
+        x2: Double,
+        y2: Double
+    ): Double {
+
+        return sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)))
     }
 }

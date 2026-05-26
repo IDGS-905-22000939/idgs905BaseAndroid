@@ -23,5 +23,19 @@
         android:text="Ejemplo2"
         app:layout_constraintTop_toTopOf="parent"
         />
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:text="Distancia"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:text="Multiplicacion A * B"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 </LinearLayout>
