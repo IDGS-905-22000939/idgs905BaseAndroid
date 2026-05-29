@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.idgs905baseandroid.Ejemplo1.ejemplo1
 import com.example.idgs905baseandroid.Distancia.distancia
 import com.example.idgs905baseandroid.Ejemplo2.Ejemplo2Activity
+import com.example.idgs905baseandroid.ExamenParcial1.ExamenResistencias
 import com.example.idgs905baseandroid.MultiplicaAporB.AporBActivity
 
 class MainActivity : AppCompatActivity() {
@@ -22,16 +23,19 @@ class MainActivity : AppCompatActivity() {
         val btnEjemplo2=findViewById<Button>(R.id.btn2)
         val btnDistancia=findViewById<Button>(R.id.btn3)
         val btnMulti=findViewById<Button>(R.id.btn4)
+        val btnRes=findViewById<Button>(R.id.btn5)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         btnEjemplo1.setOnClickListener { navegateToEjemplo1() }
         btnEjemplo2.setOnClickListener { navegateToEjemplo2() }
         btnDistancia.setOnClickListener { navegateToDistancia() }
         btnMulti.setOnClickListener { navegateToMulti() }
+        btnRes.setOnClickListener { navegateToResist() }
     }
     fun navegateToEjemplo1(){
         val intent= Intent(this, ejemplo1::class.java)
@@ -56,5 +60,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(
             intent
         )
+    }
+
+    fun navegateToResist(){
+        val intent = Intent(this, ExamenResistencias::class.java)
+        startActivity(intent)
     }
 }

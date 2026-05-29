@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Idgs905BaseAndroid">
         <activity
+            android:name=".ExamenParcial1.ExamenResistencias"
+            android:exported="false" />
+        <activity
             android:name=".MultiplicaAporB.ResultadoActivity"
             android:exported="false" />
         <activity
